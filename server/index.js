@@ -1,10 +1,14 @@
 import express from 'express';
 
+import userRouter from './routes/user.routes.js';
+
 const app = express()
 
 const port = 4000
 
-app.get('/', (req, res) => {
+app.use(userRouter)
+
+app.get('/firts', (req, res) => {
     res.send('Hello World!')
 })
 
