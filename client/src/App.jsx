@@ -2,7 +2,8 @@ import {Route, Routes} from 'react-router-dom'
 
 //Importando vistas
 import Home from './views/Home'
-// import NavBar from './components/NavBar'
+import Login from './views/Login'
+import NotFound from './views/NotFound'
 
 function App() {
 
@@ -10,6 +11,8 @@ function App() {
     <>
       <Routes>
         <Route path='/' element={<Home/>} />
+        <Route path='/login' element={<Login/>} />
+        <Route path='*' element={<NotFound/>}/>
       </Routes>
     </>
   )
