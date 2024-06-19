@@ -1,14 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {Route, Routes} from 'react-router-dom'
+
+//Importando vistas
+import Home from './views/Home'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <h2 class className='text-center font-semibold'>Bienvenido</h2>
+      <Routes>
+        <Route path='/' Component={<Home/>}/>
+      </Routes>
     </>
   )
 }
