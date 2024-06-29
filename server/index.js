@@ -1,7 +1,7 @@
 import express from 'express';
 
 import userRouter from './routes/user.routes.js';
-import { sequelize } from './database/db.js';
+import { db } from './database/db.js';
 
 const app = express()
 
@@ -19,7 +19,7 @@ app.listen(port, () => {
 
 //Probando la conexion a la base de datos
 try {
-    await sequelize.authenticate();
+    await db.authenticate();
     console.log('Conectado con la base de datos')
 } catch (error) {
     console.error(`No se pudo conectar a la base de datos ${error}`)
