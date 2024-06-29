@@ -1,6 +1,7 @@
 import express from 'express';
 
 import userRouter from './routes/user.routes.js';
+import { sequelize } from './database/db.js';
 
 const app = express()
 
@@ -15,3 +16,11 @@ app.get('/firts', (req, res) => {
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
+
+//Probando la conexion a la base de datos
+try {
+    await sequelize.authenticate();
+    console.log('Conectado con la base de datos')
+} catch (error) {
+    console.error(`No se pudo conectar a la base de datos ${error}`)
+}
