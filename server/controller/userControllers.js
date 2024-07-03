@@ -20,9 +20,16 @@ export const ping = async (req, res) => {
 
     })
 
+    const user1 = await User.findOne({where: {email: newUser.email}})
+
     try {
-        await newUser.save()
-        console.log('Se guardo correctamente', newUser)
+        if(user1){
+            console.log(`El usuario: ${user1} ya existe`)
+            return;
+        } else {
+            await newUser.save()
+            console.log('Se guardo correctamente', newUser)
+        }
     } catch (error) {
         console.log(error)
     }
