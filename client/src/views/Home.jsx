@@ -95,8 +95,9 @@ const Home = () => {
             className="p-2 border rounded-lg px-2 w-64"
           />
           <input
+            type="submit"
             value="Registrarte"
-            className="bg-gray-800 text-white text-center py-2 rounded-lg"
+            className="bg-gray-800 text-white text-center p-2 rounded-lg"
           />
         </form>
         <p className="text-xs text-center mt-2 text-gray-500 mb-16">
