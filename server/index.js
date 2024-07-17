@@ -7,6 +7,9 @@ const app = express()
 
 const port = 4000
 
+//Procesar los datos del cliente
+app.use(express.json())
+
 app.use(userRouter)
 
 app.get('/firts', (req, res) => {
