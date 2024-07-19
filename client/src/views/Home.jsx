@@ -17,13 +17,13 @@ const Home = () => {
 
           <div className="flex flex-row space-x-2 mt-6">
             <Link
-              to="#"
+              to="/register"
               className="px-5 py-2 rounded-lg bg-gray-900 text-white hover:bg-gray-800"
             >
               Registrarse
             </Link>
             <Link
-              to="#"
+              to="/login"
               className="px-5 py-2 rounded-lg border border-gray-700 hover:bg-slate-200"
             >
               Iniciar Sesión
