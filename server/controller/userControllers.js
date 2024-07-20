@@ -1,9 +1,5 @@
 import User from '../models/User.js'
 
-export const loginUser = (req, res) => {
-    return res.json({message: "Desde el login"})
-}
-
 export const registerUser = async (req, res) => {
     try {
       // Obteniendo los datos del body
@@ -29,10 +25,5 @@ export const registerUser = async (req, res) => {
     } catch (error) {
         return res.status(500).json({message: error.message});
     }
-
-}
-
-export const ping = async (req, res) => {
-    res.json({message: 'Hola soy un ping'})
 
 }
