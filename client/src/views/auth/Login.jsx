@@ -23,7 +23,7 @@ const Login = () => {
           <input className="w-full border border-gray-300 rounded-lg py-3 px-2 mt-2" placeholder="******" type="password"/>
 
           <button className="w-full bg-gray-900 text-white py-3 mt-4 rounded-3xl hover:bg-gray-800">Iniciar Sesión</button>
-          <Link href="#" className="text-center text-gray-500 my-4">¿No tienes cuenta?, Registrate</Link>
+          <Link to="/register" className="text-center text-gray-500 my-4">¿No tienes cuenta?, Registrate</Link>
         </form>
       </div>
     </div>
