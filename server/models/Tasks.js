@@ -3,7 +3,7 @@ import { DataTypes } from "sequelize";
 import { db } from "../database/db.js";
 
 const Tasks = db.define("Tasks", {
-  id: {
+  taskId: {
     type: DataTypes.UUID,
     defaultValue: DataTypes.UUIDV4,
     allowNull: false,
@@ -33,6 +33,9 @@ const Tasks = db.define("Tasks", {
     type: DataTypes.UUID,
     //TODO: references: { model: "Projects", key: "id" },
     allowNull: false,
-  }
-  
+  }  
 });
+
+await Tasks.sync()
+
+export default Tasks;

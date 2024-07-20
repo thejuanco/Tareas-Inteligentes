@@ -1,18 +1,22 @@
 //Modelos de los Projectos
-import { Sequelize } from "sequelize";
+import { DataTypes } from "sequelize";
 import { db } from "../database/db.js";
 
-const Projectos = db.define("Projects", {
-    id: {
+const Projects = db.define("Projects", {
+    projectsId: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
         allowNull: false,
         primaryKey: true,
     },
     name: {
-        type: DataTypes.String
+        type: DataTypes.STRING(255)
     },
     description: {
-        type: DataTypes.String
+        type: DataTypes.TEXT
     }
 })
+
+await Projects.sync();
+
+export default Projects

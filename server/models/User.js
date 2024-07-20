@@ -5,7 +5,7 @@ import { db } from '../database/db.js'
 const User = db.define(
     'User',
     {
-        id: {
+        userId: {
             type: DataTypes.UUID,
             defaultValue: DataTypes.UUIDV4,
             allowNull: false,
