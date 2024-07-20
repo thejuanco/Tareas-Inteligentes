@@ -26,12 +26,10 @@ const Tasks = db.define("Tasks", {
   }, 
   assigned_to: {
     type: DataTypes.UUID,
-    references: { model: "Users", key: "id" },
     allowNull: false,
   },
   project_id: {
     type: DataTypes.UUID,
-    //TODO: references: { model: "Projects", key: "id" },
     allowNull: false,
   }  
 });
