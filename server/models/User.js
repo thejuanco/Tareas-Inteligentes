@@ -1,6 +1,7 @@
 //Modelo de usuarios
 import { DataTypes, UUIDV4 } from 'sequelize'
 import { db } from '../database/db.js'
+import bcrypt from 'bcrypt'
 
 const User = db.define(
     'User',
@@ -30,8 +31,19 @@ const User = db.define(
         token: {
             type: DataTypes.STRING
         }
+    },{
+        hooks: {
+            beforeCreate: async (user) => {
+                user.password = await bcrypt.hash(user.password, 10)
+            }
+        }
     }
 )
+
+//Compara la contraseña
+User.prototype.authPassword = function(password){
+    return bcrypt.compareSync(password, this.password)
+}
 
 await User.sync() // Crea la tabla de usuarios si no existe
 
