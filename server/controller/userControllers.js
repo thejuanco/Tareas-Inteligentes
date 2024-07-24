@@ -38,8 +38,10 @@ export const loginUser = async (req, res) => {
       return
     }
 
-
-
+    if(!emailUser.authPassword(password)){
+      console.log("Password incorrect");
+      return
+    }
     
   } catch (error) {
     return res.status(500).json({ message: error.message });
