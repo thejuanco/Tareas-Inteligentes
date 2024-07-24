@@ -1,11 +1,12 @@
 //rutas para el usuario
 import express from 'express'
 
-import { loginUser, registerUser, ping } from '../controller/userControllers.js' 
+import { registerUser, loginUser } from '../controller/userControllers.js' 
 
 const router = express.Router()
 
 router.post('/register', registerUser)
+router.post('/login', loginUser)
 
 router.get('/test', (req, res) => {
     res.json({
