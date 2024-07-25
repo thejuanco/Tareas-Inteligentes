@@ -9,11 +9,13 @@ const Register = () => {
     handleSubmit,
     watch,
     formState: { errors },
+    reset
   } = useForm()
 
   const onSubmit = (data) => {
     try {
       registerUser(data)
+      reset()
     } catch (error) {
       console.log(error)
     }
