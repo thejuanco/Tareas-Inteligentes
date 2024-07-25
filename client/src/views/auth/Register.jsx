@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form"
+import { registerUser } from "../../api/user.api.js";
 
 const Register = () => {
 
@@ -11,7 +12,11 @@ const Register = () => {
   } = useForm()
 
   const onSubmit = (data) => {
-    console.log(data)
+    try {
+      registerUser(data)
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (
@@ -38,14 +43,14 @@ const Register = () => {
             <p className="text-red-700">El nombre el obligatorio</p>
           )}
 
-          <label className="mt-6 my-1 block font-semibold" htmlFor="emailUser">
+          <label className="mt-6 my-1 block font-semibold" htmlFor="lastname">
             Apellido
           </label>
           <input
-            name="emailUser"
+            name="lastname"
             type="text"
             className="w-full p-2 border border-gray-300 rounded-lg"
-            {...register("lastname", {required: true})}
+            {...register("lastName", {required: true})}
           />
           {errors.lastname?.type === "required" && (
             <p className="text-red-700">El apellido es obligatorio</p>
