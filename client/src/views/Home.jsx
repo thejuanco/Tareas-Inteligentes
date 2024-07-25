@@ -32,7 +32,7 @@ const Home = () => {
         </div>
 
         <div className="w-1/2 m-4">
-          <img src="../img/colaboracion.png" alt="Colaboración" />
+          <img src="img/colaboracion.png" alt="Colaboración" />
         </div>
       </div>
 
