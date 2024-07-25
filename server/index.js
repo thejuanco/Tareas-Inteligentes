@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors'
 
 import userRouter from './routes/user.routes.js';
 import { db } from './database/db.js';
@@ -6,6 +7,9 @@ import { db } from './database/db.js';
 const app = express()
 
 const port = 4000
+
+//Habilitar CORS para permitir peticiones desde cualquier origen
+app.use(cors())
 
 //Procesar los datos del cliente
 app.use(express.json())
