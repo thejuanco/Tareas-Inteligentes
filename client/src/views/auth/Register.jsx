@@ -45,16 +45,16 @@ const Register = () => {
             <p className="text-red-700">El nombre el obligatorio</p>
           )}
 
-          <label className="mt-6 my-1 block font-semibold" htmlFor="lastname">
+          <label className="mt-6 my-1 block font-semibold" htmlFor="lastName">
             Apellido
           </label>
           <input
-            name="lastname"
+            name="lastName"
             type="text"
             className="w-full p-2 border border-gray-300 rounded-lg"
             {...register("lastName", {required: true})}
           />
-          {errors.lastname?.type === "required" && (
+          {errors.lastName?.type === "required" && (
             <p className="text-red-700">El apellido es obligatorio</p>
           )}
 
