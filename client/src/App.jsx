@@ -5,6 +5,7 @@ import Home from './views/Home'
 import Login from './views/auth/Login'
 import Register from './views/auth/Register'
 import NotFound from './views/NotFound'
+import ConfirmAccount from './views/auth/ConfirmAccount'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <Route path='/' element={<Home/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/register' element={<Register/>} />
+        <Route path='/confirm-account' element={<ConfirmAccount/>} />
         <Route path='*' element={<NotFound/>}/>
       </Routes>
     </>
