@@ -1,8 +1,12 @@
 import React from "react";
 import { useForm } from "react-hook-form"
+import { useNavigate } from "react-router-dom";
 import { registerUser } from "../../api/user.api.js";
 
 const Register = () => {
+
+  //Navegacion
+  const navigate = useNavigate()
 
   const {
     register,
@@ -16,6 +20,7 @@ const Register = () => {
     try {
       registerUser(data)
       reset()
+      navigate("/confirm-account")
     } catch (error) {
       console.log(error)
     }
