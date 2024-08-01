@@ -30,7 +30,8 @@ const User = db.define(
         },
         token: {
             type: DataTypes.STRING
-        }
+        },
+        confirmado: DataTypes.BOOLEAN
     },{
         hooks: {
             beforeCreate: async (user) => {
