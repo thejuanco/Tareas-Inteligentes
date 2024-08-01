@@ -10,7 +10,7 @@ const ConfirmAccount = () => {
           <h1 className="text-center font-bold text-3xl my-4">Verifica tu cuenta</h1>
           <p className="text-center text-gray-500">
             Hemos enviado un correo de verificación a tu correo electronico, por
-            favor verificación tu correo y sigue las intrucciones, para
+            favor verifica tu correo y sigue las intrucciones, para
             activar tu cuenta.
           </p>
           <Link
