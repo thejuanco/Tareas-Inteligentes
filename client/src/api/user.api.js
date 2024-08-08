@@ -8,3 +8,11 @@ export const registerUser = async (register) => {
         console.log(error.response.data)
     }
 }
+
+export const confirmUser = async (confirm) => {
+    try {
+        await axios.post('http://localhost:4000/confirm-account/:token', confirm)
+    } catch (error) {
+        console.log(error.response.data)
+    }
+}
