@@ -6,9 +6,9 @@ export const registerUser = async (req, res) => {
     // Obteniendo los datos del body
     const { name, lastName, email, password } = req.body;
 
-    const userExists = await User.findOne({ where: {email} });
+    const userExists = await User.findOne({ where: { email } });
 
-    if(userExists) {
+    if (userExists) {
       console.log("User already exists");
       return;
     }
@@ -18,7 +18,7 @@ export const registerUser = async (req, res) => {
       lastName,
       email,
       password,
-      token: generateId()
+      token: generateId(),
     });
 
     console.log(`Se creo al usuario: ${newUser}`);
@@ -29,27 +29,41 @@ export const registerUser = async (req, res) => {
   }
 };
 
+export const confirmAccount = async (req, res) => {
+  // Implementación para confirmar la cuenta del usuario
+  const { token } = req.params;
+
+  const user = await User.findOne({ where: { token } });
+
+  if (!user) {
+    console.log("Token invalido");
+    return;
+  }
+
+  //Confirmar la cuenta del usuario
+  user.token = null;
+  user.confirmado = true;
+  await user.save();
+};
+
 export const loginUser = async (req, res) => {
   try {
-    const {email, password} = req.body
-    
-    const emailUser = await User.findOne({ where: { email }});
+    const { email, password } = req.body;
 
-    if(!emailUser){
+    const emailUser = await User.findOne({ where: { email } });
+
+    if (!emailUser) {
       console.log("User not found");
-      return
+      return;
     }
 
-    if(!emailUser.authPassword(password)){
+    if (!emailUser.authPassword(password)) {
       console.log("Password incorrect");
-      return
+      return;
     }
-    
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
 };
 
-export const test = async (req, res) => {
-
-};
+export const test = async (req, res) => {};
