@@ -1,4 +1,5 @@
 import User from "../models/User.js";
+import { generateId } from "../helpers/token.js";
 
 export const registerUser = async (req, res) => {
   try {
@@ -17,6 +18,7 @@ export const registerUser = async (req, res) => {
       lastName,
       email,
       password,
+      token: generateId()
     });
 
     console.log(`Se creo al usuario: ${newUser}`);
