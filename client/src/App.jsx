@@ -15,7 +15,7 @@ function App() {
         <Route path='/' element={<Home/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/register' element={<Register/>} />
-        <Route path='/confirm-account/:token' element={<ConfirmAccount/>} />
+        <Route path='/confirm-account/' element={<ConfirmAccount/>} />
         <Route path='*' element={<NotFound/>}/>
       </Routes>
     </>

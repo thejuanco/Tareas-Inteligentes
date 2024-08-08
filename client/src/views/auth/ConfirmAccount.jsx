@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const ConfirmAccount = () => {
+
   return (
     <div className="flex justify-center items-center h-screen ">
       <div className="w-1/3">
